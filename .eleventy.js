@@ -1,13 +1,11 @@
 module.exports = function (eleventyConfig) {
-  // Passthrough copy for styles, images, and other static assets
-  eleventyConfig.addPassthroughCopy("Styles");
+  eleventyConfig.addPassthroughCopy("styles");
   eleventyConfig.addPassthroughCopy("Imgs");
 
-  // Set the input and output directories
   return {
       dir: {
-          input: ".", // Root directory as input
-          includes: "_includes", // Layouts and partials
+          input: ".",
+          includes: "_includes",
           output: "_site"
       }
   };
