@@ -1,8 +1,16 @@
 {
-  "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+  "name": "11ty-lab-project",
+  "version": "1.0.0",
+  "description": "11ty site with Alpine.js and Tailwind",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx eleventy",
+    "start": "npx eleventy --serve"
   },
   "dependencies": {
-    "@11ty/eleventy-upgrade-help": "^3.0.1"
-  }
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "keywords": [],
+  "author": "Your Name",
+  "license": "MIT"
 }
