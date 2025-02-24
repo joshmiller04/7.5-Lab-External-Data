@@ -1,6 +1,12 @@
+module.exports = function (eleventyConfig) {
+  // Passthrough copy for JS and CSS files
+  eleventyConfig.addPassthroughCopy("./src/js");
+  eleventyConfig.addPassthroughCopy("./src/css");
 
-// The export statement makes these settings available to other files in 11ty
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("styles");
+  return {
+      dir: {
+          input: "src",
+          output: "_site"
+      }
+  };
 };
