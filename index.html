@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>11ty Lab Project</title>
-    <link rel="stylesheet" href="/styles/screen.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/write-up.html">AI Tool Write Up</a></li>
+<body class="bg-gray-100 text-gray-800">
+    <nav class="p-4 bg-white shadow-md">
+        <ul class="flex space-x-4">
+            <li><a href="/" class="text-blue-500 hover:underline">Home</a></li>
+            <li><a href="/write-up.html" class="text-blue-500 hover:underline">AI Tool Write-Up</a></li>
         </ul>
     </nav>
 
-    <main x-data="{ counter: 0 }">
-        <h1>Alpine.js Counter</h1>
-        <div class="counter-container">
-            <p>Counter: <span x-text="counter"></span></p>
-            <button @click="counter++">+1</button>
-            <button @click="counter--">-1</button>
-
+    <main class="p-8" x-data="{ counter: 0 }">
+        <h1 class="text-2xl font-bold mb-4">Simple Alpine.js Counter</h1>
+        <div class="p-4 bg-white rounded shadow">
+            <p class="text-lg mb-4">Counter: <span x-text="counter"></span></p>
+            <button @click="counter++" class="px-4 py-2 bg-blue-500 text-white rounded">Increment</button>
+            <button @click="counter--" class="px-4 py-2 bg-red-500 text-white rounded ml-2">Decrement</button>
         </div>
     </main>
 
