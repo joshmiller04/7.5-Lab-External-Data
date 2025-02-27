@@ -9,7 +9,7 @@
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Custom JavaScript (app.js) -->
-    <script src="/js/app.js" defer></script> <!-- Verify the path is correct -->
+    <script src="/js/app.js" defer></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
     <nav class="p-4 bg-white shadow-md">
@@ -25,6 +25,13 @@
         <!-- Loading Indicator -->
         <p x-show="!data1.length && !data2.length" class="text-gray-500">Loading data...</p>
         
+        <!-- Debugging Output -->
+        <div class="mb-4 p-4 bg-yellow-100 border border-yellow-300 rounded">
+            <h2 class="font-bold text-yellow-700 mb-2">Debugging Information:</h2>
+            <p>Data1 Length: <span x-text="data1.length"></span></p>
+            <p>Data2 Length: <span x-text="data2.length"></span></p>
+        </div>
+
         <div class="grid grid-cols-2 gap-4">
             <!-- Render data from the first API endpoint -->
             <template x-for="item in data1" :key="item.id">
@@ -43,6 +50,5 @@
             </template>
         </div>
     </main>
-
 </body>
 </html>

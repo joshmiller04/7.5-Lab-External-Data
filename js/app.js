@@ -1,5 +1,5 @@
 document.addEventListener('alpine:init', () => {
-    console.log('Alpine.js initialized!');
+    console.log('✅ Alpine.js initialized!');
 
     // Define the Alpine.js component
     Alpine.data('fetchData', () => ({
@@ -7,7 +7,7 @@ document.addEventListener('alpine:init', () => {
         data2: [],
         
         async init() {
-            console.log('Fetching data...');
+            console.log('🚀 Fetching data...');
 
             try {
                 // Fetch data from the first API endpoint
@@ -15,18 +15,24 @@ document.addEventListener('alpine:init', () => {
                 if (!response1.ok) throw new Error('Failed to fetch users data');
                 
                 this.data1 = await response1.json();
-                console.log('Data1 loaded:', this.data1);
+                console.log('📦 Data1 loaded:', this.data1);
 
                 // Fetch data from the second API endpoint
                 const response2 = await fetch('https://jsonplaceholder.typicode.com/posts');
                 if (!response2.ok) throw new Error('Failed to fetch posts data');
                 
                 this.data2 = await response2.json();
-                console.log('Data2 loaded:', this.data2);
+                console.log('📦 Data2 loaded:', this.data2);
+
+                // Check if data is correctly assigned
+                console.log('🔍 Check Alpine Data1:', this.data1);
+                console.log('🔍 Check Alpine Data2:', this.data2);
 
             } catch (error) {
-                console.error('Error fetching data:', error);
+                console.error('❌ Error fetching data:', error);
             }
         }
     }));
+
+    console.log('🔍 Testing fetchData definition:', Alpine.data('fetchData'));
 });
