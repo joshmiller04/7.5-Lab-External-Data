@@ -4,23 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>11ty Lab Project</title>
+    
+    <!-- Tailwind CSS (CDN method) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js (Load before app.js) -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Custom JavaScript (app.js) -->
+    <script defer src="/js/app.js"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
     <nav class="p-4 bg-white shadow-md">
         <ul class="flex space-x-4">
             <li><a href="/" class="text-blue-500 hover:underline">Home</a></li>
-            <li><a href="/write-up.html" class="text-blue-500 hover:underline">AI Tool Write-Up</a></li>
         </ul>
     </nav>
 
-    <main class="p-8" x-data="{ counter: 0 }">
-        <h1 class="text-2xl font-bold mb-4">Simple Alpine.js Counter</h1>
-        <div class="p-4 bg-white rounded shadow">
-            <p class="text-lg mb-4">Counter: <span x-text="counter"></span></p>
-            <button @click="counter++" class="px-4 py-2 bg-blue-500 text-white rounded">Increment</button>
-            <button @click="counter--" class="px-4 py-2 bg-red-500 text-white rounded ml-2">Decrement</button>
+    <main class="p-8" x-data="fetchData">
+        <h1 class="text-2xl font-bold mb-4">API Data Rendered with Alpine Fetch</h1>
+        
+        <!-- Loading Indicator -->
+        <p x-show="!data1.length && !data2.length" class="text-gray-500">Loading data...</p>
+        
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Render data from the first API endpoint -->
+            <template x-for="item in data1" :key="item.id">
+                <div class="p-4 bg-white rounded shadow">
+                    <h2 class="font-semibold" x-text="item.name"></h2>
+                    <p x-text="item.email"></p>
+                </div>
+            </template>
+
+            <!-- Render data from the second API endpoint -->
+            <template x-for="item in data2" :key="item.id">
+                <div class="p-4 bg-white rounded shadow">
+                    <h2 class="font-semibold" x-text="item.title"></h2>
+                    <p x-text="item.body"></p>
+                </div>
+            </template>
         </div>
     </main>
 

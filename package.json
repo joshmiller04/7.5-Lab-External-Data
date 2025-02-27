@@ -1,16 +1,16 @@
 {
-  "name": "11ty-lab-project",
+  "name": "alpine-11ty-project",
   "version": "1.0.0",
-  "description": "11ty site with Alpine.js and Tailwind",
-  "main": "index.js",
+  "description": "A minimal 11ty project with Alpine.js",
+  "main": ".eleventy.js",
+  "type": "module", 
   "scripts": {
-    "build": "npx eleventy",
-    "start": "npx eleventy --serve"
+      "start": "npx @11ty/eleventy --serve",
+      "build": "npx @11ty/eleventy"
   },
-  "dependencies": {
-    "@11ty/eleventy": "^2.0.1"
-  },
-  "keywords": [],
   "author": "Your Name",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+      "@11ty/eleventy": "^2.0.0"
+  }
 }
