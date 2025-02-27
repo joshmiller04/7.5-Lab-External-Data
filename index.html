@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>11ty Lab Project</title>
-    
-    <!-- Tailwind CSS (CDN method) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Alpine.js (Load before app.js) -->
+    <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
     <!-- Custom JavaScript (app.js) -->
-    <script defer src="/js/app.js"></script>
+    <script src="/js/app.js" defer></script> <!-- Verify the path is correct -->
 </head>
 <body class="bg-gray-100 text-gray-800">
     <nav class="p-4 bg-white shadow-md">
         <ul class="flex space-x-4">
             <li><a href="/" class="text-blue-500 hover:underline">Home</a></li>
+            <li><a href="/write-up.html" class="text-blue-500 hover:underline">AI Tool Write-Up</a></li>
         </ul>
     </nav>
 
