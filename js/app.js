@@ -1,3 +1,5 @@
+console.log('🚦 app.js has loaded!'); // Add this line
+
 document.addEventListener('alpine:init', () => {
     console.log('✅ Alpine.js initialized!');
 
@@ -23,10 +25,6 @@ document.addEventListener('alpine:init', () => {
                 
                 this.data2 = await response2.json();
                 console.log('📦 Data2 loaded:', this.data2);
-
-                // Check if data is correctly assigned
-                console.log('🔍 Check Alpine Data1:', this.data1);
-                console.log('🔍 Check Alpine Data2:', this.data2);
 
             } catch (error) {
                 console.error('❌ Error fetching data:', error);
