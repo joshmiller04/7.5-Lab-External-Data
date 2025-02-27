@@ -31,5 +31,11 @@ document.addEventListener('alpine:init', () => {
         }
     }));
 
-    console.log('🔍 Testing fetchData definition:', Alpine.data('fetchData'));
+    console.log('🔍 fetchData component definition:', Alpine.data('fetchData'));
+
+    // Manual Alpine store check
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('🧠 Alpine Store Check - Data1:', Alpine.store('fetchData')?.data1);
+        console.log('🧠 Alpine Store Check - Data2:', Alpine.store('fetchData')?.data2);
+    });
 });
