@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>11ty Lab Project</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <!-- Custom JavaScript (app.js) -->
     <script src="/js/app.js" defer></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -33,7 +30,6 @@
         </div>
 
         <div class="grid grid-cols-2 gap-4">
-            <!-- Render data from the first API endpoint -->
             <template x-for="item in data1" :key="item.id">
                 <div class="p-4 bg-white rounded shadow">
                     <h2 class="font-semibold" x-text="item.name"></h2>
@@ -41,7 +37,6 @@
                 </div>
             </template>
 
-            <!-- Render data from the second API endpoint -->
             <template x-for="item in data2" :key="item.id">
                 <div class="p-4 bg-white rounded shadow">
                     <h2 class="font-semibold" x-text="item.title"></h2>
