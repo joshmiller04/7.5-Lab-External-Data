@@ -11,7 +11,6 @@ document.addEventListener('alpine:init', () => {
             console.log('🚀 Fetching data...');
 
             try {
-                // Fetch data from the first API endpoint
                 const response1 = await fetch('https://jsonplaceholder.typicode.com/users');
                 console.log('🔍 Response1 Status:', response1.status);
                 if (!response1.ok) throw new Error('Failed to fetch users data');
@@ -19,7 +18,6 @@ document.addEventListener('alpine:init', () => {
                 this.data1 = await response1.json();
                 console.log('📦 Data1 loaded:', this.data1);
 
-                // Fetch data from the second API endpoint
                 const response2 = await fetch('https://jsonplaceholder.typicode.com/posts');
                 console.log('🔍 Response2 Status:', response2.status);
                 if (!response2.ok) throw new Error('Failed to fetch posts data');

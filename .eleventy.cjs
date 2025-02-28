@@ -1,12 +1,12 @@
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("js"); // Copy js folder to _site/js
-  eleventyConfig.addPassthroughCopy("styles"); // Copy styles to _site/styles
-  eleventyConfig.addPassthroughCopy("write-up.html"); // Copy write-up.html to _site
+  eleventyConfig.addPassthroughCopy("js"); 
+  eleventyConfig.addPassthroughCopy("styles"); 
+  eleventyConfig.addPassthroughCopy("write-up.html"); 
 
   return {
       dir: {
-          input: ".",          // Root directory as input
-          output: "_site"       // Output folder for the built site
+          input: ".",          
+          output: "_site"       
       }
   };
 };
